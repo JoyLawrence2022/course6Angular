@@ -1,0 +1,47 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Flat Design Login Form Example</title>
+    <link rel="stylesheet" href="./admin.component.css">
+  
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form" name='signinForm' (submit)="doSignin()">
+          <input type="text" name='userName' [(ngModel)]="username" placeholder="Admin ID"/>
+          <input type="password" name='userpwd' [(ngModel)]="password" placeholder="password"/>
+          <button name="submit" type="submit">Login</button>
+          <p class="message">Not registered? <a href="/adminsignup" routerLink="/adminsignup">Signup</a></p>
+        </form>
+      </div>
+    </div>
+    
+</body>    
+
+
+
+
+<!--
+
+<div class="login-page">
+    <div class="box">
+        <div style="color : rgb(0, 255, 42)" *ngIf='error'>{{error}}</div>
+        <h1>Admin Login </h1>
+        <form name='signinForm' (submit)="doSignin()" class="register-form">
+            <div class="inputBox">
+                <input type='text' name='userName' [(ngModel)]="username"/>
+                <label>username</label>
+                <div class="inputBox">
+                    <input type='password' name='userpwd' [(ngModel)]="password"/>
+                    <label>password</label>
+            </div>
+            <input name="submit" type="submit" value="Signin" >
+    
+            <p class="message"><label>Don't have account? <a href="/signup" routerLink="/signup"> Signup </a></label></p>
+            </div>
+            
+        </form>
+    </div>
+    
+</div>
+-->

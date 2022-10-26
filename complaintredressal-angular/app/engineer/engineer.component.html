@@ -1,0 +1,38 @@
+<style>
+    table, th, td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+
+<h2>Following complaints have been assigned to you:</h2>
+    <ul class="list-group" > 
+        <table style="width:80%">
+        <tr>
+        <th>ID</th><th>Cust. Name</th><th>Problem type</th><th>Complaint no.</th><th>Active status</th>
+        <th>Tel. No.</th><th>PIN</th><th>Assigned Engineer</th><th>Assigned status</th><th>New status</th>
+        </tr>
+    <!--    <li class="list-group-item" *ngFor="let complaint of complaints" >  -->
+         
+            <tr *ngFor="let complaint of complaints_details">     
+                <td>{{ complaint.id }}</td><td>{{complaint.customerName}}</td><td>{{ complaint.problem_name }}</td>
+                <td>{{complaint.complaintTrackingNumber}}</td><td>{{complaint.active_status}}</td>
+                <td>{{complaint.tel_no}}</td><td>{{complaint.pincode}}</td><td>{{complaint.engrName}}</td>
+                <td>{{complaint.ticket_status}}</td>
+                <td><input type='text' name='assign' [(ngModel)]="newStatus">
+                    <button (click)="doUpdateAssignedStatus(complaint.complaintTrackingNumber)" class="btn btn-danger">Update Status</button> 
+                </td>
+            </tr> 
+           
+        
+    </table>
+    </ul>     
+
+

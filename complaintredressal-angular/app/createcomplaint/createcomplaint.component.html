@@ -1,0 +1,22 @@
+<div>
+    <a routerLink="/customer" class="nav-link">Go Back</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Enter the problem details!</h2>
+            <div class="signin-box">
+                <div class="box">
+                    <div style="color : rgb(0, 255, 42)" *ngIf='error'>{{error}}</div>
+                    <form name="addComplaintForm" (submit)="doAddComplaint()"> 
+                        <input type="radio" value="can't make calls" name="problem_name" [(ngModel)]="problem_name" required> Cannot make calls <br>
+                        <input type="radio" value="can't receive calls" name="problem_name" [(ngModel)]="problem_name" required> Cannot receive calls <br>
+                        <input type="radio" value="can't make/rec calls" name="problem_name" [(ngModel)]="problem_name" required> Cannot make or receive calls <br><br>
+                        <button class="btn btn-primary" type="submit">Raise Complaint</button>       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

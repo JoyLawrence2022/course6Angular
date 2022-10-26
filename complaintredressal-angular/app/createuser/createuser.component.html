@@ -1,0 +1,44 @@
+<div class="signup-box">
+	<div class="box">
+        <div style="color : rgb(255, 0, 42)" *ngIf='error'>{{error}}</div>
+        <div style="color : green" *ngIf='success'>{{success}}</div>
+        <h4>Add new User!</h4>
+        <form name='addUserForm' (submit)="addUser()">
+            <div class="inputBox">
+                <input type='text' name='username' [(ngModel)]="username"/>
+                <label>username</label>
+                <div class="inputBox">
+                    <input type='password' name='password' [(ngModel)]="userpwd"/>
+                    <label>password</label>
+                    <table>
+                        <td>Roles:</td>
+                        <td>
+                        <div *ngFor="let role of user_roles">
+                            <input [(ngModel)]="role.selected" name="{{ role.name }}"
+                             type="checkbox" id="{{role.name}}" (change)="onChangeCategory($event, role)">
+                            <label class="form-check-label" for="{{role.name}}">
+                                {{role.name}}
+                            </label>
+                        </div>
+                    </td>
+                </table>
+                </div>
+                
+                <input name="submit" type="submit" value="Add User" class="btn btn-danger"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--
+<h4>Add new item into database:</h4>
+<div>
+    <input #name type="text" placeholder="Item name" [(ngModel)]="product.name" >
+    <input #status type="text" placeholder="Item price" [(ngModel)]="product.price" >
+    <input type="button" (click)="addNewItem()" value="Add Item" >
+</div>
+<div>
+    <a routerLink="/admin" class="nav-link">Back to Admin Control</a>
+</div>
+
+-->

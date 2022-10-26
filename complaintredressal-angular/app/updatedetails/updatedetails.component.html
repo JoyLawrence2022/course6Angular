@@ -1,0 +1,46 @@
+<div>
+    <a routerLink="/customer" class="nav-link">Go Back</a>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Enter Customer details here!</h2>
+        
+        <div class="signin-box">
+            <div class="box">
+                <div style="color : rgb(0, 255, 42)" *ngIf='error'>{{error}}</div>
+                <form name='customerDetailsForm' (submit)="doAddCustomer()">
+                    <div class="inputBox">
+                        <div>
+                            <input type='text' name='plot_No' [(ngModel)]="plot_No"/>
+                            <label>Plot No. </label>
+                        </div>
+                        <div>
+                            <input type='text' name='locality' [(ngModel)]="locality"/>
+                            <label>Locality</label>
+                        </div>
+                        <div>
+                            <input type='text' name='district' [(ngModel)]="district"/>
+                            <label>District</label>
+                        </div>
+                        <div>
+                            <input type='text' name='state' [(ngModel)]="state"/>
+                            <label>State</label>
+                        </div>
+                        <div>
+                            <input type='number' name='pincode' [(ngModel)]="pincode"/>
+                            <label>Pin Code</label>
+                        </div>
+                        <div>
+                            <input type='text' name='tel_no' [(ngModel)]="tel_no"/>
+                            <label>Contact No.</label>
+                        </div>
+                    </div>
+                    <input name="submit" type="submit" value="Update My Details" >       
+                </form>
+            </div>
+            
+        </div>
+     </div>
+    </div>
+</div>

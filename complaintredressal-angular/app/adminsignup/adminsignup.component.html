@@ -1,0 +1,10 @@
+<div class="login-page">
+    <div class="form">
+      <form class="login-form" name='signupForm' (submit)="doSignup()">
+        <input type="text" name='userName' [(ngModel)]="username" placeholder="Admin ID"/>
+        <input type="password" name='userpwd' [(ngModel)]="password" placeholder="password"/>
+        <button name="submit" type="submit">Signup</button>
+       
+      </form>
+    </div>
+  </div>

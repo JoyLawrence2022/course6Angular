@@ -1,0 +1,21 @@
+
+<a routerLink="/admin" class="nav-link">Back to Admin Control</a>
+
+ 
+<div class="container">
+    <ul class="list-group" > 
+        <li class="list-group-item" *ngFor="let userName of users" >
+        <div class="row"> 
+            <div class="col col-lg-4">       
+              {{ userName }} <!-- since UserModel has only one variable, no need to
+                            call user.userName -->
+            </div> 
+             
+            <div class="col col-lg-2">
+                <button (click)="doDelete(userName)" class="btn btn-danger">Delete</button>
+            </div>
+            
+        </div>
+        </li>
+       </ul>     
+</div> 

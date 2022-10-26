@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Flat Design Login Form Example</title>
+  <link rel="stylesheet" href="./login.component.css">
+
+</head>
+<body>
+
+<div class="login-page">
+    <div class="form">
+      <div class="col-md-12">
+        <h2>Welcome to Complaint Redressal System!</h2>
+        <p>Version 1.0</p>
+        
+
+        <div class="signin-box">
+            <div class="box">
+                <div style="color : rgb(0, 255, 42)" *ngIf='error'>{{error}}</div>
+                <h2>User Login </h2>
+                <form class="login-form" name='signinForm' (submit)="doSignin()">
+                    <div class="inputBox">
+                        <input type='text' name='userName' placeholder="User ID" [(ngModel)]="userName"/>
+                        <div class="inputBox">
+                            <input type='password' name='userpwd' placeholder="password" [(ngModel)]="userpwd"/>
+                    </div>
+                    <button name="submit" type="submit">Login</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>        
+      </div>
+    </div>
+</div>
+</body>
+<!--
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" name='signinForm' (submit)="doSignin()">
+      <input type="text" name='userName' [(ngModel)]="username" placeholder="Admin ID"/>
+      <input type="password" name='userpwd' [(ngModel)]="password" placeholder="password"/>
+      <button name="submit" type="submit">Login</button>
+      <p class="message">Not registered? <a href="/adminsignup" routerLink="/adminsignup">Signup</a></p>
+    </form>
+  </div>
+</div>
+-->
